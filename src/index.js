@@ -27,6 +27,12 @@ const feedbackReducer = (state = {}, action) => {
       support: action.payload
     }
   }
+  else if (action.type === 'ADD_COMMENT') {
+    return {
+      ... state,
+      comment: action.payload
+    }
+  }
   return state;
 };
 

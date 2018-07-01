@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const mapReduxStateToProps = reduxStore => ({
   reduxStore
-})
+});
 
 class Support extends Component {
 
