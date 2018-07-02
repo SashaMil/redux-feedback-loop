@@ -7,7 +7,7 @@
     "@material-ui/core": "^1.3.0",
     "axios": "^0.17.1",
     "pg": "^7.4.1",
-    "react": "^16.2.0",
+    "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -25,5 +25,18 @@
     "server": "nodemon --watch server server/server.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "> **PLEASE COMMENT YOUR CODE.** Do not clone this repository. Instead, download the zip, extract the contents, `git init`, `git add .`, `git commit -m \"initial commit - base project\"` and add your remote. Please do this before you leave for the day.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SashaMil/redux-feedback-loop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SashaMil/redux-feedback-loop/issues"
+  },
+  "homepage": "https://github.com/SashaMil/redux-feedback-loop#readme"
 }
