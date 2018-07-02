@@ -76,6 +76,9 @@ class Admin extends Component {
           <TableHead>
             <TableRow>
               <TableCell>
+                Date
+              </TableCell>
+              <TableCell>
                 Feeling
               </TableCell>
               <TableCell>
@@ -98,8 +101,11 @@ class Admin extends Component {
           <TableBody>
             {this.state.feedbackList.map(entry => {
               return (
-                <TableRow key={entry.id} style={{backgroundColor: entry.flagged? 'white' : 'red'}}>
+                <TableRow key={entry.id} style={{backgroundColor: entry.flagged? 'red' : 'white'}}>
 
+                  <TableCell>
+                    {entry.date}
+                  </TableCell>
                   <TableCell>
                     {entry.feeling}
                   </TableCell>
