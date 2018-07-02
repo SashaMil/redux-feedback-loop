@@ -27,7 +27,9 @@ class Understanding extends Component {
   render() {
     return (
       <div>
-        <label>How well are you understanding the content?</label>
+        <label>How well are you understanding the content? (Rate 1-5)</label>
+        <br></br>
+        <br></br>
         <input type="number" onChange={this.handleUnderstandingChange}></input>
         <button onClick={this.submitUnderstanding}><Link to="/support">Next</Link></button>
       </div>

@@ -27,7 +27,9 @@ class Feeling extends Component {
   render() {
     return (
       <div>
-        <label>How are you feeling today?</label>
+        <label>How are you feeling today? (Rate 1-5)</label>
+        <br></br>
+        <br></br>
         <input type="number" onChange={this.handleFeelingChange}></input>
         <button onClick={this.submitFeeling}><Link to="/understanding">Next</Link></button>
       </div>

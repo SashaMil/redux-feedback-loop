@@ -27,6 +27,8 @@ class Comment extends Component {
     return (
       <div>
         <label>Any comments you want to leave?</label>
+        <br></br>
+        <br></br>
         <input onChange={this.handleCommentChange}></input>
         <button onClick={this.submitComment}><Link to="/confirmation">Next</Link></button>
       </div>

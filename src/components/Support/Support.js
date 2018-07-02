@@ -27,7 +27,9 @@ class Support extends Component {
   render() {
     return (
       <div>
-        <label>How well are you being supported?</label>
+        <label>How well are you being supported? (Rate 1-5)</label>
+        <br></br>
+        <br></br>
         <input type="number" onChange={this.handleSupportChange}></input>
         <button onClick={this.submitSupport}><Link to="/comment">Next</Link></button>
       </div>

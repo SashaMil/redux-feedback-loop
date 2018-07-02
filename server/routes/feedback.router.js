@@ -39,11 +39,11 @@ router.delete('/:id', (req, res) => {
     const queryText =   `DELETE FROM feedback WHERE id=$1;`;
     pool.query(queryText, [id])
         .then(result => {
-            console.log(`successfully deleted from the db: `, result);
+            console.log(`Deleted entry `, result);
             res.sendStatus(200);
         })
         .catch(error => {
-            console.log(`error with the db: `, error);
+            console.log(`Error deleting entry`, error);
             res.sendStatus(500);
         })
 
