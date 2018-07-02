@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const bodyParser = require('body-parser');
 const pool = require('../modules/pool');
 
 router.post('/', (req, res) => {
@@ -20,7 +21,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
   console.log('Handling GET for feedback');
-  const querytext = 'SELECT * FROM feedback';
+  const queryText = 'SELECT * FROM feedback';
   return pool.query(queryText)
     .then((result) => {
       console.log('Finished GET for /feedback', result.rows);
@@ -31,5 +32,22 @@ router.get('/', (req, res) => {
       res.sendStatus(500);
     })
 })
+
+router.delete('/:id', (req, res) => {
+    let id = req.params.id;
+    console.log('Handling delete on /feedback', id);
+    const queryText =   `DELETE FROM feedback WHERE id=$1;`;
+    pool.query(queryText, [id])
+        .then(result => {
+            console.log(`successfully deleted from the db: `, result);
+            res.sendStatus(200);
+        })
+        .catch(error => {
+            console.log(`error with the db: `, error);
+            res.sendStatus(500);
+        })
+
+})
+
 
 module.exports = router;
