@@ -33,6 +33,20 @@ router.get('/', (req, res) => {
     })
 })
 
+router.put('/', (req, res) => {
+  console.log('giraffe', req.body);
+  const queryText = `UPDATE feedback SET flagged=$2 WHERE id=$1`
+  pool.query(queryText, [req.body.ider, req.body.flagger])
+  .then((result) => {
+    console.log('Finished PUT for /movie');
+    res.sendStatus(200);
+  })
+  .catch((error) => {
+    console.log(`Error handling POST for /movie`, error);
+    res.sendStatus(500);
+  })
+});
+
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     console.log('Handling delete on /feedback', id);

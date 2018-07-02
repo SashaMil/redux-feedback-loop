@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import './Admin.css';
 
 // Material Table Parts
 import Table from '@material-ui/core/Table';
@@ -34,6 +35,27 @@ class Admin extends Component {
     .catch(error => {
       alert('Error retrieving entries')
     });
+  }
+
+  flaggedEntry = (id, flag) => {
+    if (flag === true) {
+      flag = false;
+    }
+    else if (flag === false) {
+      flag = true;
+    }
+    else {
+      flag = true;
+    }
+    console.log(flag);
+    axios.put(`/feedback`, {ider: id, flagger: flag})
+      .then(response => {
+        console.log('Flagged entry');
+        this.getAllEntries();
+      })
+      .catch(error => {
+        alert('Unable to flag entry at this time');
+      });
   }
 
   deleteEntry = (id) => {
@@ -76,7 +98,8 @@ class Admin extends Component {
           <TableBody>
             {this.state.feedbackList.map(entry => {
               return (
-                <TableRow key={entry.id}>
+                <TableRow key={entry.id} style={{backgroundColor: entry.flagged? 'white' : 'red'}}>
+
                   <TableCell>
                     {entry.feeling}
                   </TableCell>
@@ -93,7 +116,7 @@ class Admin extends Component {
                     <button onClick={() => {this.deleteEntry(entry.id)}}>Remove</button>
                   </TableCell>
                   <TableCell>
-                    {entry.flagged}
+                    <button onClick={() => {this.flaggedEntry(entry.id, entry.flagged)}}>Flag/Unflag Entry</button>
                   </TableCell>
                 </TableRow>
               )
