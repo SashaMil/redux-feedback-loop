@@ -28,7 +28,7 @@ class Feeling extends Component {
     return (
       <div>
         <label>How are you feeling today?</label>
-        <input onChange={this.handleFeelingChange}></input>
+        <input type="number" onChange={this.handleFeelingChange}></input>
         <button onClick={this.submitFeeling}><Link to="/understanding">Next</Link></button>
       </div>
     );

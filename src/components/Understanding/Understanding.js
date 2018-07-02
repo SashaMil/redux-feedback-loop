@@ -28,7 +28,7 @@ class Understanding extends Component {
     return (
       <div>
         <label>How well are you understanding the content?</label>
-        <input onChange={this.handleUnderstandingChange}></input>
+        <input type="number" onChange={this.handleUnderstandingChange}></input>
         <button onClick={this.submitUnderstanding}><Link to="/support">Next</Link></button>
       </div>
     );

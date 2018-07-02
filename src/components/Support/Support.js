@@ -28,7 +28,7 @@ class Support extends Component {
     return (
       <div>
         <label>How well are you being supported?</label>
-        <input onChange={this.handleSupportChange}></input>
+        <input type="number" onChange={this.handleSupportChange}></input>
         <button onClick={this.submitSupport}><Link to="/comment">Next</Link></button>
       </div>
     );

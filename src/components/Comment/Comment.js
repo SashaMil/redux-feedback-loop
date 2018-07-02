@@ -10,12 +10,12 @@ class Comment extends Component {
   constructor() {
     super();
     this.state = {
-      support: ''
+      comment: ''
     }
   }
 
   handleCommentChange = (event) => {
-    this.setState({support: event.target.value});
+    this.setState({comment: event.target.value});
     console.log(this.state);
   }
 
